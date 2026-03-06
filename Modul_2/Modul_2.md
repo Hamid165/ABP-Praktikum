@@ -86,16 +86,9 @@ Berikut ini adalah implementasi tabel berdasarkan struktur dasar HTML murni bese
 
 ![Hasil Tabel HTML](assets/1.png)
 
-### Penjelasan Eksekusi Kode
+### Penjelasan code:
 
-Berdasarkan struktur HTML yang telah dibuat, berikut adalah penjelasan teknis mengenai proses rendering HTML di atas:
-
-1. **Tag `<center>`**: Kode diletakkan di dalam tag `<center>` agar seluruh elemen di dalamnya (yakni satu elemen tabel secara utuh) otomatis ditempatkan di bagian tengah layar browser tanpa membutuhkan satu baris pun kode style CSS.
-2. **Atribut pada `<table>`**: 
-   - `border="1"`: Memberikan batas garis setebal 1 piksel di sekitar semua sel dalam tabel.
-   - `cellpadding="5"`: Memberikan ruang spasi sebesar 5 piksel di antara konten teks di dalam sel dengan batas garis tepi selnya.
-   - `cellspacing="0"`: Menghilangkan celah ganda di antara satu sel dengan sel lainnya sehingga membuat batas garis tabel tampak lebih rapi (menyatu).
-3. **Penggunaan Tag Header (`<th>`) dengan `rowspan` dan `colspan`**:
-   - `rowspan="2"` pada bagian `Nama Lengkap` dan `Age`: Karena *baris* untuk header tabel mengambil ruang sebanyak 2 tingkat, maka data tersebut digabungkan sebanyak 2 baris ke bawah.
-   - `colspan="2"` pada `Gelar Pendidikan`: *Kolom* Gelar Pendidikan menggabungkan 2 tempat kolom di bagian kiri dan kanan untuk nantinya dapat menampung anak kolom berisikan "Sarjana" dan "Magister" tepat di bagian bawahnya.
-4. **Pembagian Data Mahasiswa (`<td>`)**: Sisa baris terakhir diisi dengan isi data aktual profil mahasiswa yang menyisipkan isian 4 kolom sejajar rata ("Hamid", "S.Kom", "M.Kom", dsb). Tiap baris `<tr>` membungkus satu mahasiswa.
+- Pada baris **7-32**, penggunaan tag pembungkus `<center>` murni bawan HTML bertujuan agar seluruh elemen tabel yang ada di dalamnya secara otomatis diletakkan persis pada posisi rata tengah area layar browser tanpa perlu adanya selipan sintaks kode CSS tambahan.
+- Pada baris **9**, atribut bawaan `border="1"`, `cellpadding="5"`, dan `cellspacing="0"` dieksekusi bersama pada tag target induk `<table>`. Fungsinya secara berurutan adalah demi mematok satu batas garis setebal 1 piksel di antara sel, memberikan pelonggaran sejauh 5 piksel antara karakter di dalam dan garis tepinya, serta menghapus celah sisa jarak dinding ganda yang secara bawaan melekat di setiap kolom HTML.
+- Pada baris **11-12**, tag header lajur header `<th>` memanggil argumen properti tambahan berupa `rowspan` dan `colspan`. Elemen `rowspan="2"` pada baris perintah `Nama Lengkap` berfungsi meleburkan area sel sebanyak dua kotak menyilang ke arah bawah baris, sekaligus sebaliknya atribut `colspan="2"` pada penanda area `Gelar Pendidikan` memperluas penggabungan kapasitas lajur kolom mengarah menyamping horizontal yang nantinya disediakan mengitari dua kolom anaknya (kolom "Sarjana" & "Magister").
+- Pada baris **19-30**, sisa baris isian tabel dibagi dengan elemen `<td>` yang dikelompokkan baris ke baris menggunakan tag awal `<tr>`. Setiap tag baris `<tr>` akan dieksekusi bergiliran sebagai bungkus satu profil entri mahasiswa, disusul per elemen anaknya berisikan data sejajar rata kolom.
