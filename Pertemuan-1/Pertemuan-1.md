@@ -30,6 +30,7 @@
 
 ---
 
+
 ## 1. Dasar Teori
 
 **Git** adalah sistem pengontrol versi (Version Control System) terdistribusi yang sangat berguna bagi para pengembang perangkat lunak untuk melacak perubahan riwayat file dan mempermudah kolaborasi kode. Sedangkan **GitHub** adalah platform layanan hosting berbasis web untuk repositori Git yang memudahkan kita menyimpan proyek secara online.
