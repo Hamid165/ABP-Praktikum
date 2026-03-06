@@ -10,14 +10,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Background menjadi putih kalem */
     background-color: #ffffff;
     background-image: radial-gradient(#d5d5d5 1px, transparent 1px);
     background-size: 25px 25px;
     font-family: 'Noto Sans SC', sans-serif;
 }
 
-/* Kotak utama berwarna merah yang elegan (Tanpa Transisi/Animasi) */
 .card {
     position: relative;
     width: 450px;
@@ -33,7 +31,6 @@ body {
     overflow: hidden;
 }
 
-/* Ornamen sudut gaya Tiongkok dengan pseudo-elements */
 .card::before,
 .card::after {
     content: '';
@@ -59,7 +56,6 @@ body {
     border-top: none;
 }
 
-/* Styling untuk font judul */
 .title {
     font-family: 'Cinzel', serif;
     font-size: 2.2em;
@@ -70,7 +66,6 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Styling untuk font subtitle */
 .subtitle {
     font-family: 'Dancing Script', cursive;
     font-size: 1.8em;
@@ -88,7 +83,6 @@ body {
     padding: 0 15px;
 }
 
-/* Area dekorasi berisi lampion/emoji (Tanpa Animasi) */
 .decoration {
     display: flex;
     justify-content: center;
@@ -96,7 +90,6 @@ body {
     font-size: 3.5em;
 }
 
-/* Lampion statis */
 .lantern {
     display: inline-block;
     filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.4));
@@ -106,7 +99,6 @@ body {
     font-size: 0.9em;
 }
 
-/* Karakter mandarin background raksasa samar */
 .chinese-char {
     position: absolute;
     top: 50%;
@@ -120,13 +112,11 @@ body {
     line-height: 1;
 }
 
-/* Supaya teks tidak tertutup karakter mandarin */
 .content-wrapper {
     position: relative;
     z-index: 1;
 }
 
-/* Tambahan tombol aksen angpao sebagai pemanis murni CSS (Tanpa Hover Interaktif) */
 .envelope {
     display: inline-block;
     margin-top: 10px;
