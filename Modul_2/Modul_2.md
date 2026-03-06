@@ -53,7 +53,6 @@ Berikut ini adalah implementasi tabel berdasarkan struktur dasar HTML murni bese
     <title>Tabel Dasar</title>
 </head>
 <body>
-    <!-- Menggunakan tag center murni bawaan HTML, tanpa CSS -->
     <center>
         <table border="1" cellpadding="5" cellspacing="0">
             <tr>
