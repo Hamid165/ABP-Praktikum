@@ -223,15 +223,10 @@ body {
 
 ![Hasil Tampilan HTML & CSS](assets/1.png)
 
-### Penjelasan Eksekusi Kode
+### Penjelasan code:
 
-Berdasarkan struktur kerangka HTML dan implementasi peng-gayaan CSS yang secara rinci telah dirancang, berikut adalah penjelasan teknis tentang proses *rendering* tata letak pada antarmuka web di atas:
-
-1. **Penggunaan External CSS (`<link rel="stylesheet" href="style.css">`)**: HTML memanggil file CSS secara eksternal dengan *linking* pada `style.css` yang memungkinkan semua elemen tag dan *class* HTML mendapati gaya visual yang sudah ditentukan tanpa mendesain pada format sebaris di dalam file markup HTML.
-2. **Penerapan Gaya Tata Letak dengan Flexbox (`body`)**: 
-   - `display: flex; justify-content: center; align-items: center;`: Properti *Flexbox* yang ditanam pada `body` ini berguna untuk memposisikan struktur tag `<div class="card">` agar berada tepat berada secara simetris di tengah sumbu halaman secara vertikal dan horizontal.
-3. **Penyusunan Konten Kartu Ucapan (`.card`)**: 
-   - `background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);`: Membentuk padu-padan nuansa warna dasar campuran *kemerah-merahan* di seluruh sisinya dengan dukungan gradien bayangan bersudut diagonal 135 derajat.
-   - `position: relative;`: Seluruh form dari kartu ini menampung titik `relative` yang memberikan efek kepada gaya elemen dan anak-anak ornamen di dalamnya yang menggunakan properti seperti `position: absolute` untuk langsung diturunkan terpasang relatif dengan tepi sudut luar kartu alih-alih pada tepian sumbu seluruh halaman.
-4. **Elemen Ornamen Estetika (Pseudo-elements `::before` & `::after`)**: Pseudo-elemen digunakan sebagai dekorasi di bagian sudut atas dan bawah pada kerangka model `.card` untuk membidik bingkai bergaris kuning. Penggunaan ini menjaga markup HTML tetap bersih dan sederhana.
-5. **Elemen Latar Dekorasi Karakter (`.chinese-char`)**: Penggunaan properti `position: absolute;` dipadukan secara langsung dengan kalkulasi *transform* seperti `transform: translate(-50%, -50%);` untuk memastikan karakter "福" tepat berada di tengah belakang sentral dari lapisan sub-elemen. Pada bagian `z-index: 0;` teks di-mundurkan menjadi latar bawah agar elemen dapat digunakan semacam *watermark*. Parameter `pointer-events: none` bertugas secara dominan memastikan area *layer* khusus teks dekoratif tidak mengambil ruang kursor dari lapisan terdepannya.
+- Pada baris **7** (`imlek.html`), HTML memanggil file CSS secara eksternal dengan *linking* pada berkas `style.css` yang memungkinkan elemen terhubungkan ke desain visual tanpa format atribut secara sebaris.
+- Pada baris **10-12** (`style.css`), properti di file CSS `display: flex; justify-content: center; align-items: center;` diaplikasikan di dalam elemen *class* `body`. Hal ini berguna secara otomatis akan memposisikan porsi struktur tag tata letak web simetris ada di tengah layang sumbu (baik di garis ukur lebar vertikal dan horizontalnya).
+- Pada baris **23-24** (`style.css`), properti perwarnaan visual pendukung `background: linear-gradient()` dipanggil guna memberikan efek gradasi halus rentang transisi warna campuran kemerahan, sedangkan sintaks `border-radius: 20px` mengatur tingkat proporsi lengkungan membulat di keempat sudut kontainer kartu utama antarmuka komponen kartu tersebut.
+- Pada baris **34-57** (`style.css`), penambahan penugasan pseudo-elemen CSS `::before` & `::after` secara manual digunakan untuk memberikan slot fungsi injeksi ornamen estetik bingkai kuning pada area pinggir luar komponen `.card` yang dikendalikan khusus tanpa perlu campur tangan di dalam baris file html nya (*markup HTML tetap *clean* tanpa serakan span kosongan*).
+- Pada baris **102-113** (`style.css`), properti parameter `position: absolute;` disetel menetap ke struktur `chinese-char` dengan dorongan penempat posisi tengah (`transform: translate(-50%, -50%);`) agar bayangan penokohan huruf mandarin dapat tepat berada presisi sentral di tengah bingkai layar kartu nya. Modul paramater `pointer-events: none;` bertugas menonaktifkan klik mouse di area seleksi khusus tulisan itu sehingga sub elemen teks itu tidak akan menenggelamkan fungsi bagian atas elemen pembaca kartu.
