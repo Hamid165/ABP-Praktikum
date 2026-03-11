@@ -13,10 +13,9 @@
   <h3>Disusun Oleh :</h3>
   <p>
     <strong>HAMID SABIRIN</strong><br>
-    2311102129<br>
-    S1 IF-11-REG01
+    <strong>2311102129</strong><br>
+    <strong>S1 IF-11-REG01</strong>
   </p>
-  <br />
   <br />
   <h3>Dosen Pengampu :</h3>
   <p>
@@ -24,8 +23,12 @@
   </p>
   <br />
   <br />
+    <h4>Asisten Praktikum :</h4>
+    <strong> Apri Pandu Wicaksono </strong> <br>
+    <strong>Rangga Pradarrell Fathi</strong>
   <br />
-  <h3>PROGRAM STUDI S1 INFORMATIKA <br>FAKULTAS INFORMATIKA <br>UNIVERSITAS TELKOM PURWOKERTO <br>2025/2026</h3>
+  <h3>LABORATORIUM HIGH PERFORMANCE
+ <br>FAKULTAS INFORMATIKA <br>UNIVERSITAS TELKOM PURWOKERTO <br>2026</h3>
 </div>
 
 ---
@@ -77,12 +80,12 @@ Berikut merupakan implementasi kartu ucapan Ramadhan berbasis *Native Bootstrap 
                     </div>
                     
                     <h1 class="display-6 text-warning fw-bolder mb-2 text-uppercase">Marhaban Ya Ramadhan</h1>
-                    <h4 class="fw-semibold text-light mb-3">Selamat Menunaikan Ibadah Puasa 1447 H</h4>
+                    <h4 class="fw-semibold text-light mb-3">Selamat Menunaikan Ibadah Puasa 1447 H. Hamid Sabirin</h4>
                     
                     <hr class="border-warning border-2 opacity-50 w-50 mx-auto mb-3">
                     
                     <p class="fs-6 text-light text-opacity-75 mb-4 px-md-3">
-                        "Semoga bulan suci ini senantiasa membawa kedamaian, keberkahan, rezeki yang melimpah, dan ampunan bagi kita semua. Mari kita bersihkan hati dan tingkatkan amal ibadah."
+                        "Semoga bulan suci ini senantiasa membawa kedamaian, keberkahan, rezeki yang melimpah, dan ampunan bagi kita semua. Mari kita bersihkan hati dan tingkatkan amal ibadah. 2311102129 - Hamid Sabirin."
                     </p>
                     
                     <div class="mt-3 text-warning opacity-75 d-flex justify-content-center align-items-center gap-3 fs-3">
@@ -115,3 +118,6 @@ Berikut merupakan implementasi kartu ucapan Ramadhan berbasis *Native Bootstrap 
 - Pada baris **19**, pembuatan model elemen kartu dibentuk menggunakan komponen fundamental Bootstrap yakni `.card`. Adapun agar menghasilkan estetika temanya, berbagai *modifier utilities* dipadupadankan yakni `bg-success bg-opacity-25` agar menciptakan kesan transparansi kaca yang kehijauan, memanggil *border border-warning border-3* sebagai pewarnaan garis melingkar kunir tua, mengaplikasikan *rounded-5* untuk tingkat kurva di keempat sisi ujung kotak, dan *shadow-lg* untuk menampilkan semburat bayangan yang tajam.
 - Pada baris **21-38**, penerapan elemen hias seperti ikon, font teks, serta spasi margin sepenuhnya memanfaatkan *utility layout* milik Bootstrap. Misal: Ukuran huruf dan tingkat ketebalannya ditugaskan dari `display-3`, `display-6`, dan `fs-6` (berpengaruh ke font size), `fw-bolder` (menggantikan font-weight biasa). Sedangkan spasi batas antara blok komponen satu dengan lain diatur secara harmonis menggunakan singkatan arah ukur spasi berupa `mb-3` (*margin-bottom: 1rem/16px*) atau format gabung padding `p-3 p-md-4` (*padding pada layar besar disetel ke skala 4*). Murni mendelegasikan perintah *class css* alih-alih merancang file selembar stylesheet khusus.
 - Pada baris **46**, dilakukan pemanggilan modul paket fungsional penunjang Javascript bawaan Bootstrap (`bootstrap.bundle.min.js`) menggunakan metode koneksi CDN.
+
+## Refrensi
+- [Materi Modul 4](https://drive.google.com/file/d/1TW5Y0AdzkVk24ThPUf1OQNs2Mnw3XNO5/view?usp=sharing)
