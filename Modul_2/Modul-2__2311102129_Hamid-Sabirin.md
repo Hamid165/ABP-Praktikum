@@ -5,18 +5,16 @@
   <h3>MODUL 2 <br> HTML</h3>
   <br />
   <br />
-  <img src="../Modul_1/assets/logo.jpeg" alt="Logo" width="300"> 
-  <br />
+  <img src="assets/logo.jpeg" alt="Logo" width="300"> 
   <br />
   <br />
   <br />
   <h3>Disusun Oleh :</h3>
   <p>
     <strong>HAMID SABIRIN</strong><br>
-    2311102129<br>
-    S1 IF-11-REG01
+    <strong>2311102129</strong><br>
+    <strong>S1 IF-11-REG01</strong>
   </p>
-  <br />
   <br />
   <h3>Dosen Pengampu :</h3>
   <p>
@@ -24,8 +22,12 @@
   </p>
   <br />
   <br />
+    <h4>Asisten Praktikum :</h4>
+    <strong> Apri Pandu Wicaksono </strong> <br>
+    <strong>Rangga Pradarrell Fathi</strong>
   <br />
-  <h3>PROGRAM STUDI S1 INFORMATIKA <br>FAKULTAS INFORMATIKA <br>UNIVERSITAS TELKOM PURWOKERTO <br>2025/2026</h3>
+  <h3>LABORATORIUM HIGH PERFORMANCE
+ <br>FAKULTAS INFORMATIKA <br>UNIVERSITAS TELKOM PURWOKERTO <br>2026</h3>
 </div>
 
 ---
@@ -92,3 +94,6 @@ Berikut ini adalah implementasi tabel berdasarkan struktur dasar HTML murni bese
 - Pada baris **9**, atribut bawaan `border="1"`, `cellpadding="5"`, dan `cellspacing="0"` dieksekusi bersama pada tag target induk `<table>`. Fungsinya secara berurutan adalah demi mematok satu batas garis setebal 1 piksel di antara sel, memberikan pelonggaran sejauh 5 piksel antara karakter di dalam dan garis tepinya, serta menghapus celah sisa jarak dinding ganda yang secara bawaan melekat di setiap kolom HTML.
 - Pada baris **11-12**, tag header lajur header `<th>` memanggil argumen properti tambahan berupa `rowspan` dan `colspan`. Elemen `rowspan="2"` pada baris perintah `Nama Lengkap` berfungsi meleburkan area sel sebanyak dua kotak menyilang ke arah bawah baris, sekaligus sebaliknya atribut `colspan="2"` pada penanda area `Gelar Pendidikan` memperluas penggabungan kapasitas lajur kolom mengarah menyamping horizontal yang nantinya disediakan mengitari dua kolom anaknya (kolom "Sarjana" & "Magister").
 - Pada baris **19-30**, sisa baris isian tabel dibagi dengan elemen `<td>` yang dikelompokkan baris ke baris menggunakan tag awal `<tr>`. Setiap tag baris `<tr>` akan dieksekusi bergiliran sebagai bungkus satu profil entri mahasiswa, disusul per elemen anaknya berisikan data sejajar rata kolom.
+
+## Refrensi
+- [Materi Modul 2](https://drive.google.com/file/d/1Gcsi-U4rzqU0GC6dYTlzO7KUthrGoL8q/view?usp=sharing)
