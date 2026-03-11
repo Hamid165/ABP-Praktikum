@@ -50,39 +50,39 @@ Berikut ini adalah implementasi desain kartu ucapan yang digabungkan antara stru
 ### Kode HTML (`imlek.html`)
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gong Xi Fa Cai!</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="card">
-        <div class="chinese-char">福</div>
-        
-        <div class="content-wrapper">
-            <div class="decoration">
-                <span class="lantern">🏮</span>
-                <span class="lantern">🧧</span>
-                <span class="lantern">🏮</span>
-            </div>
-            
-            <h1 class="title">Gong Xi Fa Cai</h1>
-            <div class="subtitle">Happy Chinese New Year 2026</div>
-            
-            <p class="message">
-                Selamat merayakan Imlek buat Bubub tersayang! ❤️<br><br>
-                Semoga tahun ini selalu membawa Hoki, kebahagiaan, rezeki yang melimpah, dan dilancarkan segala harapannya.
-            </p>
+      <div class="chinese-char">福</div>
 
-            <a href="#" class="envelope">Open Angpao 🧧</a>
+      <div class="content-wrapper">
+        <div class="decoration">
+          <span class="lantern">🏮</span>
+          <span class="lantern">🧧</span>
+          <span class="lantern">🏮</span>
         </div>
-    </div>
 
-</body>
+        <h1 class="title">Gong Xi Fa Cai</h1>
+        <div class="subtitle">Happy Chinese New Year 2311102129</div>
+
+        <p class="message">
+          Selamat merayakan Imlek buat Bubub tersayang! ❤️<br /><br />
+          Semoga tahun ini selalu membawa Hoki, kebahagiaan, rezeki yang
+          melimpah, dan dilancarkan segala harapannya. ini ada angpao dari hamid
+          sabirin.
+        </p>
+
+        <a href="#" class="envelope">Open Angpao 🧧</a>
+      </div>
+    </div>
+  </body>
 </html>
 ```
 
@@ -225,8 +225,17 @@ body {
 
 ### Penjelasan code:
 
-- Pada baris **7** (`imlek.html`), HTML memanggil file CSS secara eksternal dengan *linking* pada berkas `style.css` yang memungkinkan elemen terhubungkan ke desain visual tanpa format atribut secara sebaris.
-- Pada baris **10-12** (`style.css`), properti di file CSS `display: flex; justify-content: center; align-items: center;` diaplikasikan di dalam elemen *class* `body`. Hal ini berguna secara otomatis akan memposisikan porsi struktur tag tata letak web simetris ada di tengah layang sumbu (baik di garis ukur lebar vertikal dan horizontalnya).
-- Pada baris **23-24** (`style.css`), properti perwarnaan visual pendukung `background: linear-gradient()` dipanggil guna memberikan efek gradasi halus rentang transisi warna campuran kemerahan, sedangkan sintaks `border-radius: 20px` mengatur tingkat proporsi lengkungan membulat di keempat sudut kontainer kartu utama antarmuka komponen kartu tersebut.
-- Pada baris **34-57** (`style.css`), penambahan penugasan pseudo-elemen CSS `::before` & `::after` secara manual digunakan untuk memberikan slot fungsi injeksi ornamen estetik bingkai kuning pada area pinggir luar komponen `.card` yang dikendalikan khusus tanpa perlu campur tangan di dalam baris file html nya (*markup HTML tetap *clean* tanpa serakan span kosongan*).
-- Pada baris **102-113** (`style.css`), properti parameter `position: absolute;` disetel menetap ke struktur `chinese-char` dengan dorongan penempat posisi tengah (`transform: translate(-50%, -50%);`) agar bayangan penokohan huruf mandarin dapat tepat berada presisi sentral di tengah bingkai layar kartu nya. Modul paramater `pointer-events: none;` bertugas menonaktifkan klik mouse di area seleksi khusus tulisan itu sehingga sub elemen teks itu tidak akan menenggelamkan fungsi bagian atas elemen pembaca kartu.
+#### 1. HTML 
+- Pada baris **7**, tag `<link>` digunakan untuk menghubungkan file HTML ini dengan file eksternal `style.css` agar kode *styling*-nya lebih rapi karena dipisah di file berbeda.
+- Pada baris **9-12**, tag `<div>` berfungsi sebagai pembungkus (*container*) untuk elemen-elemen di dalamnya. Atribut `class` (seperti `card` atau `content-wrapper`) ditambahkan supaya elemen tersebut lebih mudah diatur desainnya dari CSS.
+- Pada baris **14-16**, tag `<span>` digunakan untuk membungkus emoji lampion. Karena `<span>` bersifat *inline*, emoji lampionnya bisa berjajar rapi ke samping tanpa membuat baris baru.
+- Pada baris **19-22**, tag `<h1>` digunakan untuk membuat teks judul utama agar ukurannya paling besar. Untuk teks isi ucapannya memakai tag `<p>` (paragraf), dengan tambahan tag `<br />` untuk membuat baris baru (seperti *Enter*).
+- Pada baris **29**, tag `<a>` dipakai untuk membuat tombol interaktif "Open Angpao". Atribut `href="#"` ditambahkan supaya tombolnya bisa diklik tanpa harus pindah ke halaman URL lain.
+
+#### 2. Styling CSS (`style.css`)
+- Pada baris **10-12**, properti `display: flex; justify-content: center; align-items: center;` diaplikasikan di dalam *class* elemen `body`. Hal ini berguna secara otomatis memposisikan porsi struktur tag tata letak web simetris di tengah layar sumbu (baik vertikal maupun horizontal).
+- Pada baris **23-24**, properti pewarnaan visual pendukung `background: linear-gradient()` dipanggil guna memberikan efek gradasi halus rentang transisi warna campuran kemerahan. Sedangkan sintaks `border-radius: 20px` mengatur tingkat proporsi lengkungan membulat di keempat sudut kontainer kartu utama antarmuka komponen.
+- Pada baris **34-57**, penambahan penugasan pseudo-elemen CSS `::before` & `::after` secara manual digunakan untuk memberikan slot fungsi injeksi ornamen estetik bingkai kuning pada area pinggir luar komponen `.card`. Ini dikendalikan khusus tanpa perlu campur tangan di dalam baris file HTML (*markup HTML tetap clean tanpa serakan span kosong*).
+
+## Refrensi
+- [Materi Modul 3](https://drive.google.com/file/d/1kd7ogQkR_rsNCnKDcJDmavY8FiOyTLzs/view?usp=sharing)
