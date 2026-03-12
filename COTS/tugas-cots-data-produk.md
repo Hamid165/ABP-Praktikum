@@ -1,8 +1,8 @@
 <div align="center">
   <br />
-  <h1>LAPORAN TUGAS COTS <br>APLIKASI BERBASIS PLATFORM</h1>
+  <h1>LAPORAN PRAKTIKUM <br>APLIKASI BERBASIS PLATFORM</h1>
   <br />
-  <h3>DATA PRODUK <br> Bootstrap, jQuery DataTables & Vanilla JavaScript</h3>
+  <h3>DATA PRODUK <br> Bootstrap, jQuery DataTables & JavaScript</h3>
   <br />
   <br />
   <br />
@@ -674,7 +674,27 @@ function showToast(msg, type = 'success') {
 
 ### Hasil Tampilan (Screenshot)
 
-> *(Screenshot menyusul)*
+#### 1. Tampilan Awal Halaman
+
+![Tampilan Awal Web](assets/1.png)
+
+#### 2. Input Data & Data Berhasil Ditambahkan
+
+![Form Input Produk](assets/2.png)
+
+![Data Berhasil Ditambahkan](assets/3.png)
+
+#### 3. Fitur Pencarian (Search)
+
+![Fitur Searching](assets/4.png)
+
+#### 4. Hapus Data
+
+![Hapus Data Produk](assets/5.png)
+
+#### 5. Edit Data
+
+![Edit Data Produk](assets/6.png)
 
 ---
 

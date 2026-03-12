@@ -39,9 +39,10 @@ $(document).ready(function () {
       { data: 'nama' },
       { data: 'kategori' },
       { data: 'hargaFmt' },
-      { data: 'aksi',    orderable: false, className: 'text-center', width: '90px' }
+      { data: 'aksi',    orderable: false, className: 'text-center', width: '90px' },
+      { data: 'seq',     visible: false }
     ],
-    order: [[1, 'asc']],
+    order: [[5, 'desc']],
     pageLength: 5,
     lengthMenu: [5, 10, 25, 50],
     drawCallback: function () {
@@ -87,6 +88,7 @@ function buildRow(p, idx) {
     id:       p.id,
     rowNum:   idx,
     nama:     p.nama,
+    seq:      p.seq,
     kategori: `<span class="badge-kategori ${badgeClass(p.kategori)}">${p.kategori}</span>`,
     hargaFmt: `<span style="font-weight:700;color:#059669;">${formatRupiah(p.harga)}</span>`,
     aksi:
@@ -123,8 +125,9 @@ function refreshStats() {
 //  CRUD — CREATE
 // ────────────────────────────────────────
 function addProduct(nama, kategori, harga) {
-  const id = 'p' + nextId++;
-  store[id] = { id, nama, kategori, harga };
+  const seq = nextId++;
+  const id  = 'p' + seq;
+  store[id] = { id, nama, kategori, harga, seq };
   dt.row.add(buildRow(store[id], 0)).draw(false);
   refreshStats();
 }
