@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br>APLIKASI BERBASIS PLATFORM</h1>
   <br />
-  <h3>MODUL 5 <br> JAVASCRIPT</h3>
+  <h3>MODUL 5 <br> JAVASCRIPT & JQUERY</h3>
   <br />
   <br />
   <img src="assets/logo.jpeg" alt="Logo" width="300"> 
@@ -354,6 +354,7 @@ thrModal.addEventListener("hidden.bs.modal", (event) => {
 ### Hasil Tampilan (Screenshot)
 
 ![Hasil Tampilan Modul 5](assets/1.png)
+![Hasil Tampilan Modul 5](assets/2.png)
 
 ### Penjelasan code:
 
