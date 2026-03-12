@@ -37,20 +37,21 @@
 
 **Bootstrap** adalah kerangka kerja (*framework*) *open-source* untuk *front-end* yang sangat populer, diciptakan khusus untuk merancang antarmuka situs web dan aplikasi web agar lebih cepat dan mudah. Di dalamnya, Bootstrap berisi template desain berbasis HTML, CSS, serta JavaScript siap pakai yang dapat digunakan untuk mengatur tipografi, formulir, tombol, navigasi, dan komponen antarmuka lainnya.
 
-Fitur paling krusial dari Bootstrap adalah sistem **Grid Responsive**-nya. Sistem *grid* ini menggunakan kontainer (*container*), baris (*row*), dan kolom (*column*) untuk menata letak layout yang dengan sendirinya bisa mengikuti berbagai varian ukuran layar piranti pengaksesnya (seperti PC, tablet, maupun *smartphone*).
+Fitur paling krusial dari Bootstrap adalah sistem **Grid Responsif**-nya. Sistem *grid* ini menggunakan kontainer (`container`), baris (`row`), dan kolom (`col`) untuk menata letak yang secara otomatis menyesuaikan diri dengan berbagai ukuran layar perangkat seperti PC, tablet, maupun *smartphone*. Sistem grid Bootstrap dibagi menjadi **12 kolom** dan mendukung lima *breakpoint*: `xs` (< 576px), `sm` (≥ 576px), `md` (≥ 768px), `lg` (≥ 992px), dan `xl` (≥ 1200px).
+
+Bootstrap juga menyediakan **metode integrasi CDN** (*Content Delivery Network*), yaitu cara menghubungkan library Bootstrap langsung dari server pihak ketiga melalui tag `<link>` dan `<script>` tanpa perlu mengunduh file-nya secara lokal.
 
 Kelebihan utama menggunakan Bootstrap di antaranya adalah:
-1. **Penghematan Waktu:** *Developer* tidak perlu menulis kode CSS dasar (seperti menetapkan margin tertentu, *display flex*, desain *card*, dll) dari nol.
+1. **Penghematan Waktu:** *Developer* tidak perlu menulis kode CSS dasar dari nol.
 2. **Konsistensi:** Menjamin tampilan antarmuka selaras di berbagai *browser* yang berbeda.
-3. **Responsif secara Default:** Komponen bawaan sudah mendukung pergerakan desain *mobile-first*.
-
-Bootstrap dapat digunakan secara luring dengan mengunduh *source file*-nya, maupun terhubung secara daring menggunakan metode *Content Delivery Network* (CDN).
+3. **Responsif secara Default:** Komponen bawaan sudah mendukung desain *mobile-first*.
+4. **Ekosistem Lengkap:** Tersedia komponen siap pakai seperti Modal, Navbar, Card, Alert, Badge, dan lainnya.
 
 ---
 
 ## 2. Penjelasan Kode HTML
 
-Berikut merupakan implementasi kartu ucapan Ramadhan berbasis *Native Bootstrap 5* murni dengan penggunaan berbagai *utilities class* tanpa menyertakan dokumen CSS tambahan apa pun, beserta hasil eksekusinya.
+Berikut merupakan implementasi kartu ucapan Ramadhan berbasis Bootstrap 5 murni dengan penggunaan berbagai *utility class* tanpa menyertakan dokumen CSS tambahan apa pun, beserta hasil eksekusinya.
 
 ### Kode HTML (`ramadan.html`)
 
@@ -112,12 +113,18 @@ Berikut merupakan implementasi kartu ucapan Ramadhan berbasis *Native Bootstrap 
 
 ### Penjelasan Code:
 
-- Pada baris **8-10**, dilakukan pemanggilan spesifik *library layout* Bootstrap dan paket *library* ikon dari Bootstrap Icons melalui metode rujukan tautan *Content Delivery Network* (CDN).
-- Pada baris **13**, *class helper*-nya secara langsung dimanfaatkan di tag `<body>` HTML. `bg-dark` dan `bg-gradient` untuk membuat latar belakang menjadi gelap dengan pola *gradient* alami, lalu susunan `d-flex justify-content-center align-items-center` dan `min-vh-100` bertugas untuk menyuntikkan properti spesifik Flexbox yang akan mengunci area tampilan agar kartu ucapan berada persis di bagian tengah halaman setiap saat.
-- Pada baris **15-17**, deklarasi sistem kolom grid dari Bootstrap diaktifkan dengan penempatan `container`, `row`, serta pembidikan *class grid responsif* dengan memanggil `col-12 col-md-8 col-lg-6`. Penggunaan sistem kolom ini bermakna: Elemen akan bernilai lebar maksimal (`col-12`) pada layar kecil seperti di handphone, akan setara sebesar rasio dua pertiga (`col-md-8`) di tampilan tablet, dan akan menciut di sepertiga tengah layar atau diperkecil secara proporsional ke lebar 6 lajur dari rasio maksimal total 12 grid (`col-lg-6`) saat mendapati layar laptop yang lebar.
-- Pada baris **19**, pembuatan model elemen kartu dibentuk menggunakan komponen fundamental Bootstrap yakni `.card`. Adapun agar menghasilkan estetika temanya, berbagai *modifier utilities* dipadupadankan yakni `bg-success bg-opacity-25` agar menciptakan kesan transparansi kaca yang kehijauan, memanggil *border border-warning border-3* sebagai pewarnaan garis melingkar kunir tua, mengaplikasikan *rounded-5* untuk tingkat kurva di keempat sisi ujung kotak, dan *shadow-lg* untuk menampilkan semburat bayangan yang tajam.
-- Pada baris **21-38**, penerapan elemen hias seperti ikon, font teks, serta spasi margin sepenuhnya memanfaatkan *utility layout* milik Bootstrap. Misal: Ukuran huruf dan tingkat ketebalannya ditugaskan dari `display-3`, `display-6`, dan `fs-6` (berpengaruh ke font size), `fw-bolder` (menggantikan font-weight biasa). Sedangkan spasi batas antara blok komponen satu dengan lain diatur secara harmonis menggunakan singkatan arah ukur spasi berupa `mb-3` (*margin-bottom: 1rem/16px*) atau format gabung padding `p-3 p-md-4` (*padding pada layar besar disetel ke skala 4*). Murni mendelegasikan perintah *class css* alih-alih merancang file selembar stylesheet khusus.
-- Pada baris **46**, dilakukan pemanggilan modul paket fungsional penunjang Javascript bawaan Bootstrap (`bootstrap.bundle.min.js`) menggunakan metode koneksi CDN.
+- Pada baris **8–10**, dilakukan pemuatan dua *library* Bootstrap melalui metode CDN menggunakan tag `<link>`. Baris **8** mengimpor `bootstrap.min.css` yang berisi seluruh aturan CSS Bootstrap (termasuk grid, komponen, dan utilitas), sedangkan baris **10** mengimpor `bootstrap-icons.min.css` yang menyediakan koleksi ikon vektor siap pakai. Atribut `integrity` berfungsi sebagai verifikasi keamanan (*Subresource Integrity*) untuk memastikan file yang diunduh tidak dimodifikasi pihak ketiga.
+- Pada baris **13**, *utility class* Bootstrap diterapkan langsung di tag `<body>`. `bg-dark` menetapkan latar belakang berwarna gelap, `bg-gradient` menambahkan efek gradasi halus di atasnya, `text-light` mewarnai semua teks turunan menjadi putih, `min-vh-100` memastikan tinggi body minimal satu layar penuh, serta `d-flex justify-content-center align-items-center` mengaktifkan Flexbox untuk menengahkan konten kartu secara horizontal dan vertikal di tengah layar.
+- Pada baris **15–17**, struktur grid Bootstrap dibangun: `container` membatasi lebar konten dan memberikan *padding* horizontal otomatis, `row justify-content-center` membuat baris grid dan memusatkan kolom-kolomnya, serta `col-12 col-md-8 col-lg-6` mendefinisikan lebar responsif kolom — lebar penuh di layar kecil (`col-12`), dua pertiga di tablet (`col-md-8`), dan separuh di laptop (`col-lg-6`).
+- Pada baris **19**, komponen kartu dibuat menggunakan kelas `.card` dari Bootstrap. Dilengkapi dengan modifier: `bg-success bg-opacity-25` menciptakan latar belakang hijau transparan 25% untuk efek kaca, `border border-warning border-3` membuat garis tepi berwarna kuning setebal 3 piksel, `rounded-5` membulatkan sudut kartu secara maksimal, dan `shadow-lg` menambahkan bayangan tebal di bawah kartu untuk kesan kedalaman.
+- Pada baris **21–23**, ikon bulan dan bintang dari Bootstrap Icons ditampilkan menggunakan tag `<i class="bi bi-moon-stars-fill">`. Pembungkus `<div class="display-3 text-warning mb-3">` memberi ukuran ikon yang sangat besar (`display-3` setara ±48px), warna kuning emas (`text-warning`), dan jarak bawah (`mb-3` setara 1rem margin-bottom).
+- Pada baris **25–26**, `<h1>` dengan kelas `display-6` menggunakan tipografi *display* Bootstrap yang lebih besar dari heading biasa, dikombinasikan `fw-bolder` (font-weight ekstra tebal) dan `text-uppercase` (mengubah semua teks menjadi kapital). Sementara `<h4>` di bawahnya menggunakan `fw-semibold` dan `text-light` untuk membedakan hierarki visual antara judul utama dan subjudul.
+- Pada baris **28**, tag `<hr>` Bootstrap diberi *utility class* `w-50 mx-auto` sehingga garis pemisah hanya memiliki lebar 50% dari kontainer dan diposisikan di tengah. `border-warning border-2 opacity-50` mengatur warna kuning, ketebalan 2px, dan transparansi 50% pada garis tersebut.
+- Pada baris **34–38**, tiga ikon bintang didekorasi menggunakan `d-flex justify-content-center align-items-center gap-3` untuk menyejajarkannya secara horizontal dengan jarak antar ikon yang seragam. Kelas `fs-3` pada pembungkus membuat ikon berukuran besar, sedangkan ikon tengah `bi-star-fill` diberi `fs-5` yang lebih kecil untuk menciptakan variasi ukuran yang estetis.
+- Pada baris **45**, tag `<script>` memuat modul JavaScript Bootstrap Bundle (`bootstrap.bundle.min.js`) yang berisi plugin JS Bootstrap beserta library Popper.js di dalamnya. File ini ditempatkan di akhir `<body>` agar tidak memblokir proses *rendering* HTML, dan menggunakan atribut `integrity` sebagai verifikasi keamanan CDN.
 
 ## Refrensi
 - [Materi Modul 4](https://drive.google.com/file/d/1TW5Y0AdzkVk24ThPUf1OQNs2Mnw3XNO5/view?usp=sharing)
+- [Bootstrap 5 Official Documentation](https://getbootstrap.com/docs/5.3/)
+- [Bootstrap Icons](https://icons.getbootstrap.com/)
+- [Bootstrap Grid System](https://getbootstrap.com/docs/5.3/layout/grid/)
