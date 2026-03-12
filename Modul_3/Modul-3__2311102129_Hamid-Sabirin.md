@@ -34,18 +34,24 @@
 
 **CSS (Cascading Style Sheet)** adalah bahasa pendamping HTML yang berfungsi untuk mendesain, mengatur, dan membentuk tampilan pada sebuah halaman website. Jika HTML diibaratkan sebagai kerangka dari sebuah bangunan, maka CSS adalah cat, dekorasi, tata letak, dan desain interior yang memperindah bangunan tersebut.
 
-CSS bekerja dengan cara memilih elemen HTML menggunakan selektor (seperti tag, *class*, atau *id*) lalu menerapkan aturan gaya padanya (properti warna, ukuran, dsb). Penggunaan CSS memungkinkan para pengembang web untuk memisahkan antara konten (HTML) dan desain visual (CSS), sehingga kode menjadi lebih bersih dan lebih mudah dipelihara.
+CSS bekerja dengan cara memilih elemen HTML menggunakan *selektor* (seperti tag, *class*, atau *id*) lalu menerapkan aturan gaya padanya (properti warna, ukuran, posisi, dsb). Penggunaan CSS memungkinkan para pengembang web untuk memisahkan antara konten (HTML) dan desain visual (CSS), sehingga kode menjadi lebih bersih dan mudah dipelihara.
 
-Terdapat tiga cara umum untuk menambahkan CSS ke dalam form HTML:
-1. **Inline CSS:** Menuliskan gaya langsung pada elemen HTML secara tertanam menggunakan atribut `style`.
+Terdapat tiga cara umum untuk menambahkan CSS ke dalam HTML:
+1. **Inline CSS:** Menuliskan gaya langsung pada elemen HTML menggunakan atribut `style`.
 2. **Internal CSS:** Mendeklarasikan aturan gaya di dalam blok `<style>` yang berada di dalam tag `<head>` dokumen.
-3. **External CSS:** Menempatkan seluruh aturan gaya dalam file terpisah dengan ekstensi `.css`, kemudian menghubungkannya dengan tag `<link>` di dalam file HTML utamanya. Hal ini adalah *best practice* dalam pemograman web untuk manajemen skala yang lebih besar.
+3. **External CSS:** Menempatkan seluruh aturan gaya dalam file terpisah berekstensi `.css`, kemudian menghubungkannya dengan tag `<link>` di dalam file HTML. Pendekatan ini adalah *best practice* untuk proyek berskala besar karena memisahkan struktur dan tampilan secara bersih.
+
+Konsep CSS lain yang dipakai dalam praktikum ini:
+- **Pseudo-elemen (`::before`, `::after`):** Menyisipkan konten dekoratif sebelum atau sesudah elemen tanpa menambah markup HTML.
+- **`z-index`:** Mengatur urutan tumpukan (*stacking order*) elemen yang saling bertindih.
+- **`filter`:** Memberikan efek visual seperti bayangan, blur, atau saturasi warna pada elemen.
+- **`:nth-child()`:** Selektor yang memilih elemen berdasarkan urutannya di antara saudara-saudara elemennya.
 
 ---
 
 ## 2. Penjelasan Kode HTML dan CSS
 
-Berikut ini adalah implementasi desain kartu ucapan yang digabungkan antara struktur kerangka dasar HTML murni dan desain modern visual yang diambil dari *External CSS*, beserta hasil tampilannya.
+Berikut ini adalah implementasi desain kartu ucapan Imlek yang menggabungkan struktur HTML murni dan desain visual modern dari *External CSS*, beserta hasil tampilannya.
 
 ### Kode HTML (`imlek.html`)
 
@@ -225,17 +231,28 @@ body {
 
 ### Penjelasan code:
 
-#### 1. HTML 
-- Pada baris **7**, tag `<link>` digunakan untuk menghubungkan file HTML ini dengan file eksternal `style.css` agar kode *styling*-nya lebih rapi karena dipisah di file berbeda.
-- Pada baris **9-12**, tag `<div>` berfungsi sebagai pembungkus (*container*) untuk elemen-elemen di dalamnya. Atribut `class` (seperti `card` atau `content-wrapper`) ditambahkan supaya elemen tersebut lebih mudah diatur desainnya dari CSS.
-- Pada baris **14-16**, tag `<span>` digunakan untuk membungkus emoji lampion. Karena `<span>` bersifat *inline*, emoji lampionnya bisa berjajar rapi ke samping tanpa membuat baris baru.
-- Pada baris **19-22**, tag `<h1>` digunakan untuk membuat teks judul utama agar ukurannya paling besar. Untuk teks isi ucapannya memakai tag `<p>` (paragraf), dengan tambahan tag `<br />` untuk membuat baris baru (seperti *Enter*).
-- Pada baris **29**, tag `<a>` dipakai untuk membuat tombol interaktif "Open Angpao". Atribut `href="#"` ditambahkan supaya tombolnya bisa diklik tanpa harus pindah ke halaman URL lain.
+#### 1. HTML (`imlek.html`)
+
+- Pada baris **7**, tag `<link rel="stylesheet" href="style.css">` digunakan untuk menghubungkan file HTML ini dengan file `style.css` eksternal. Pendekatan *External CSS* ini memisahkan struktur dan tampilan ke file berbeda sehingga kode lebih rapi dan mudah dipelihara.
+- Pada baris **10–11**, dua `<div>` bersarang dideklarasikan: `.card` sebagai kartu utama pembungkus seluruh konten, dan `.chinese-char` yang menjadi latar karakter Mandarin 福 (*fú*, berarti keberuntungan). Keduanya menggunakan atribut `class` agar dapat diidentifikasi dan diberi gaya dari CSS.
+- Pada baris **13–18**, `<div class="decoration">` berisi tiga elemen `<span class="lantern">` yang memuat emoji lampion dan angpao. Karena `<span>` bersifat *inline*, ketiga emoji berjajar rapi secara horizontal. Kelas `lantern` memungkinkan CSS memilih setiap elemen emoji secara individual untuk diberi efek bayangan atau ukuran berbeda.
+- Pada baris **20–21**, tag `<h1 class="title">` dipakai untuk judul utama kartu agar memiliki ukuran teks terbesar secara semantik. Sementara `<div class="subtitle">` digunakan untuk subjudul karena tidak memerlukan bobot semantik heading, cukup diberi gaya melalui CSS.
+- Pada baris **23–28**, tag `<p class="message">` menampung teks ucapan paragraf dengan tag `<br />` di dalamnya untuk memaksa pindah baris di tengah paragraf, menghasilkan jeda visual seperti menekan tombol Enter.
+- Pada baris **30**, tag `<a href="#" class="envelope">` membuat tombol interaktif bertuliskan *Open Angpao*. Atribut `href="#"` menjaga elemen tetap bersifat tautan yang bisa diklik tanpa mengarahkan pengguna ke URL lain, sementara tampilan tombolnya sepenuhnya dibentuk oleh kelas CSS `.envelope`.
 
 #### 2. Styling CSS (`style.css`)
-- Pada baris **10-12**, properti `display: flex; justify-content: center; align-items: center;` diaplikasikan di dalam *class* elemen `body`. Hal ini berguna secara otomatis memposisikan porsi struktur tag tata letak web simetris di tengah layar sumbu (baik vertikal maupun horizontal).
-- Pada baris **23-24**, properti pewarnaan visual pendukung `background: linear-gradient()` dipanggil guna memberikan efek gradasi halus rentang transisi warna campuran kemerahan. Sedangkan sintaks `border-radius: 20px` mengatur tingkat proporsi lengkungan membulat di keempat sudut kontainer kartu utama antarmuka komponen.
-- Pada baris **34-57**, penambahan penugasan pseudo-elemen CSS `::before` & `::after` secara manual digunakan untuk memberikan slot fungsi injeksi ornamen estetik bingkai kuning pada area pinggir luar komponen `.card`. Ini dikendalikan khusus tanpa perlu campur tangan di dalam baris file HTML (*markup HTML tetap clean tanpa serakan span kosong*).
+
+- Pada baris **1–3**, blok `* { box-sizing: border-box; }` diterapkan secara universal ke semua elemen. Properti ini mengubah model perhitungan lebar elemen agar `padding` dan `border` sudah termasuk di dalam nilai `width` yang ditetapkan, mencegah elemen "membengkak" melebihi lebar yang diinginkan.
+- Pada baris **5–16**, elemen `body` diberi `display: flex` bersama `justify-content: center` dan `align-items: center` sehingga seluruh konten anak berada tepat di tengah layar baik secara horizontal maupun vertikal. Properti `background-image: radial-gradient(...)` dengan `background-size: 25px 25px` menghasilkan pola titik-titik abu-abu yang berulang sebagai tekstur latar belakang.
+- Pada baris **18–29**, kelas `.card` menggunakan `position: relative` agar elemen turunannya yang diposisikan secara absolut (seperti `.chinese-char`) dihitung relatif terhadap kartu ini. `background: linear-gradient(135deg, #d32f2f, #b71c1c)` menghasilkan gradasi warna merah tua bertingkat, `border-radius: 20px` membulatkan sudut kartu, dan `overflow: hidden` memotong semua konten yang melebihi batas tepi kartu.
+- Pada baris **31–54**, *pseudo-elemen* `::before` dan `::after` digunakan untuk membuat ornamen bingkai sudut emas di pojok kiri atas dan kanan bawah kartu tanpa menambahkan elemen HTML baru. `content: ''` diperlukan agar pseudo-elemen dapat dirender, lalu `position: absolute` memposisikannya relatif terhadap `.card`. Masing-masing pseudo-elemen menghapus sisi border yang berbeda (`border-right: none` dan `border-bottom: none` untuk sudut kiri atas, sebaliknya untuk sudut kanan bawah) sehingga berbentuk seperti tanda kurung siku.
+- Pada baris **56–72**, `.title` dan `.subtitle` masing-masing menggunakan `font-family` yang berbeda untuk menciptakan kontras tipografi: `'Cinzel'` (serif klasik) untuk judul utama yang tegas, dan `'Dancing Script'` (kursif) untuk subjudul yang lebih elegan. Kedua font ini adalah font Google Fonts yang dapat dimuat secara daring.
+- Pada baris **82–92**, `.decoration` menggunakan `display: flex` dengan `gap: 20px` untuk memberikan jarak seragam antara ketiga emoji lampion, sementara `.lantern` diberi `filter: drop-shadow(...)` yang menghasilkan efek bayangan jatuh (*drop shadow*) yang lebih presisi dibandingkan `box-shadow` karena menyesuaikan bentuk konten emoji secara transparan.
+- Pada baris **94–96**, selektor `.lantern:nth-child(odd)` secara spesifik menarget elemen `.lantern` yang berada di posisi ganjil (ke-1 dan ke-3), yaitu kedua emoji lampion merah 🏮 di posisi tepi, lalu mengecilkan ukurannya menjadi `0.9em` dibanding emoji tengah, menciptakan efek kedalaman visual yang lebih hidup.
+- Pada baris **98–109**, `.chinese-char` diberi `position: absolute` dengan kombinasi `top: 50%`, `left: 50%`, dan `transform: translate(-50%, -50%)` — teknik standar CSS untuk memusatkan elemen secara absolut di tengah induknya tanpa bergantung pada ukuran elemen. `color: rgba(255, 215, 0, 0.06)` menjadikannya sangat transparan sehingga tampil sebagai watermark halus, `z-index: 0` menempatkannya di lapisan paling bawah, dan `pointer-events: none` memastikan elemen ini tidak mencegat interaksi klik pengguna.
 
 ## Refrensi
 - [Materi Modul 3](https://drive.google.com/file/d/1kd7ogQkR_rsNCnKDcJDmavY8FiOyTLzs/view?usp=sharing)
+- [MDN Web Docs — CSS Pseudo-elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
+- [MDN Web Docs — CSS filter](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)
+- [Google Fonts — Cinzel & Dancing Script](https://fonts.google.com/)
